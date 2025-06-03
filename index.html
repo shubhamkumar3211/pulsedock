@@ -3,30 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tab Counter</title>
+  <meta name="description" content="Tab Counter and free online tools: Age Calculator, BMI Calculator, Date Difference Calculator, and more. Try our fun Tab Counter game and useful calculators!" />
+  <meta name="keywords" content="Tab counter, typing speed, typing game, keyboard test, reaction timer, age calculator, BMI calculator, date difference, online tools" />
+  <meta name="author" content="Your Name" />
+  <title>Tab Counter & Free Online Tools – Fast, Fun & Useful Calculators</title>
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Tab Counter & Free Online Tools" />
+  <meta property="og:description" content="Fun typing test and useful calculators: Tab Counter, Age Calculator, BMI Calculator, Date Difference Calculator, and more." />
+  <meta property="og:image" content="preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container" tabindex="0">
-    <h1>⌨️ Tab Counter</h1>
-    <p>Press the <strong>Tab</strong> key as many times as you can!</p>
-    <div id="testMsg" class="test-msg">This is a test page, wait for update...</div>
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="nav-brand">
+        <a href="/" aria-label="Home">🛠️ ToolBox</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Tab Counter</a></li>
+        <li><a href="#">Age Calculator</a></li>
+        <li><a href="#">BMI Calculator</a></li>
+        <li><a href="#">Date Difference</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <label>
-      Duration (seconds):
-      <input type="number" id="durationInput" value="60" min="5" />
-    </label>
-    <button id="startBtn">Start</button>
-    <button id="stopBtn" disabled>Stop</button>
+  <main>
+    <section class="hero">
+      <h1>🛠️ Free Online Tools & Fun Games</h1>
+      <p>Try our <strong>Tab Counter</strong> game and explore calculators like Age, BMI, and Date Difference. More tools coming soon!</p>
+    </section>
 
-    <div class="results">
-      <p><strong>Time Left:</strong> <span id="timeDisplay">60</span> s</p>
-      <p><strong>Tab Presses:</strong> <span id="countDisplay">0</span></p>
-      <canvas id="tabChart" width="350" height="200" style="display:none;margin-top:20px;"></canvas>
+    <section class="tool-cards">
+      <div class="tool-card active">
+        <h2>Tab Counter Game</h2>
+        <p>Press the <strong>Tab</strong> key as many times as you can before time runs out. Visualize your performance with a live chart!</p>
+        <div class="tab-counter-app">
+          <div class="controls">
+            <label for="durationInput">Duration (seconds):</label>
+            <input type="number" id="durationInput" value="60" min="5" />
+            <div class="buttons">
+              <button id="startBtn">Start</button>
+              <button id="stopBtn" disabled>Stop</button>
+            </div>
+          </div>
+          <div class="results">
+            <p><strong>Time Left:</strong> <span id="timeDisplay">60</span> s</p>
+            <p><strong>Tab Presses:</strong> <span id="countDisplay">0</span></p>
+          </div>
+          <canvas id="tabChart" width="400" height="200" style="display:none;margin-top:1rem;"></canvas>
+          <div id="testMsg" class="test-msg">This is a test page, wait for update...</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h2>Age Calculator</h2>
+        <p>Calculate your exact age in years, months, and days.</p>
+        <button disabled>Coming Soon</button>
+      </div>
+      <div class="tool-card">
+        <h2>BMI Calculator</h2>
+        <p>Check your Body Mass Index and health category.</p>
+        <button disabled>Coming Soon</button>
+      </div>
+      <div class="tool-card">
+        <h2>Date Difference Calculator</h2>
+        <p>Find the difference between two dates in days, weeks, or months.</p>
+        <button disabled>Coming Soon</button>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <form class="contact-form" autocomplete="off">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 ToolBox. All rights reserved.</span>
+      <span class="footer-social">
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">💻</a>
+        <a href="mailto:your@email.com" aria-label="Email">✉️</a>
+      </span>
     </div>
-  </div>
+  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Responsive nav toggle
+    document.querySelector('.nav-toggle').onclick = function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    };
+    // Dark mode toggle
+    document.getElementById('darkModeToggle').onclick = function() {
+      document.body.classList.toggle('dark-mode');
+    };
+    // Contact form (demo only)
+    document.querySelector('.contact-form').onsubmit = function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting us!');
+      this.reset();
+    };
+  </script>
 </body>
 </html>
