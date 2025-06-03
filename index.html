@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab Counter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" tabindex="0">
+    <h1>⌨️ Tab Counter</h1>
+    <p>Press the <strong>Tab</strong> key as many times as you can!</p>
+    <div id="testMsg" class="test-msg">This is a test page, wait for update...</div>
+
+    <label>
+      Duration (seconds):
+      <input type="number" id="durationInput" value="60" min="5" />
+    </label>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+
+    <div class="results">
+      <p><strong>Time Left:</strong> <span id="timeDisplay">60</span> s</p>
+      <p><strong>Tab Presses:</strong> <span id="countDisplay">0</span></p>
+      <canvas id="tabChart" width="350" height="200" style="display:none;margin-top:20px;"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
